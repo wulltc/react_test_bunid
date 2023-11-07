@@ -1,0 +1,10 @@
+@import "../../views/content/content.module";
+
+.notFound {
+  @extend .content;
+  margin-top: var(--header-height);
+
+  .text {
+    margin-top: 2rem;
+  }
+}

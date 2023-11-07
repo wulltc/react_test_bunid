@@ -1,0 +1,57 @@
+@import "../../assets/styles/extends";
+
+.bookSearchWrapper {
+  margin-top: var(--header-height);
+  margin-bottom: var(--paging-height);
+
+  .info {
+    @extend .flexCenter;
+    column-gap: .5rem;
+
+    .line {
+      flex: 1;
+      height: 1px;
+      background-color: var(--border-color);
+    }
+
+    .text {
+      color: var(--text-color);
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+  }
+
+  .books {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+
+@media screen and (max-width: 968px) {
+  .bookSearchWrapper {
+    .books {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .info {
+      .text {
+        font-size: 1rem;
+      }
+    }
+
+    .books {
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .bookSearchWrapper {
+    .books {
+      grid-template-columns: 1fr;
+    }
+  }
+}

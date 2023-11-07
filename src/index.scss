@@ -1,0 +1,96 @@
+%darkTheme {
+  --app-color: #1a1a1a;
+  --icon-color: #ffffff;
+  --fallback-color: #000000;
+  --view-color: #171717;
+  --text-color: #fbfbfb;
+  --shadow-color: #000000;
+  --book-bg-color: #141313;
+  --border-color: #282828;
+}
+
+:root {
+  --max-width: 1200px;
+  --fallback-color: #ffffff;
+  --icon-color: #222222;
+  --header-height: 9rem;
+  --paging-height: 8rem;
+  --user-color: #2290bf;
+  --user-color-soft: #2290bf4a;
+  --view-color: #ffffff;
+  --app-color: #ffffff;
+  --text-color: #1c1c1c;
+  --shadow-color: #dcdcdc;
+  --border-color: #e8e8e8;
+  --muted-color: #8a8a8a;
+  --radius: 6px;
+}
+
+// Applique instantanement le theme noir avant javascript
+@media (prefers-color-scheme: dark) {
+  :root {
+    --app-color: #1a1a1a;
+    --icon-color: #ffffff;
+    --fallback-color: #000000;
+    --view-color: #171717;
+    --text-color: #fbfbfb;
+    --shadow-color: #050505;
+    --book-bg-color: #141313;
+    --border-color: #282828;
+  }
+}
+
+@media screen and (max-width: 968px) {
+  :root {
+    --header-height: 7rem
+  }
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  transition: .2s ease;
+}
+
+body {
+  overflow: hidden;
+  background-color: var(--app-color);
+
+  &[data-dark="true"] {
+    @extend %darkTheme
+  }
+}
+
+h1, h2, h3, h4, h5, h6, a, p {
+  margin: 0;
+}
+
+%nob {
+  border: none;
+
+  &:focus, &:hover, &:active {
+    outline: none;
+    border: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  @extend %nob;
+}
+
+button, input {
+  @extend %nob;
+}

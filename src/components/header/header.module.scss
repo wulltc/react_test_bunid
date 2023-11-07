@@ -1,0 +1,34 @@
+@import "../../assets/styles/extends";
+
+.header {
+  @extend .fixed;
+  height: var(--header-height);
+  background: var(--view-color);
+  background: linear-gradient(0deg, var(--view-color) 0%, var(--user-color-soft) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  margin: 0 auto;
+  max-width: var(--max-width);
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  padding: 2rem 1rem 0;
+  z-index: 1;
+
+  .title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-color);
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .header {
+    padding-top: 1rem;
+
+    .title {
+      font-size: 1.5rem;
+    }
+  }
+}

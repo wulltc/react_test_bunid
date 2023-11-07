@@ -1,0 +1,8 @@
+@import "../../assets/styles/extends";
+
+.content {
+  @extend .flexCenter;
+  flex-direction: column;
+  height: 100%;
+  grid-column: span 3/4;
+}

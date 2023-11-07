@@ -1,0 +1,50 @@
+@import "../../assets/styles/extends";
+
+.searchBarWrapper {
+  @extend .flexCenter;
+  justify-content: space-between;
+  box-shadow: 0 0 8px var(--shadow-color);
+  border-radius: var(--radius);
+  --h: 3rem;
+  height: var(--h);
+  min-width: 60%;
+  background-color: var(--fallback-color);
+  column-gap: .5rem;
+  overflow: hidden;
+
+  .searchBar {
+    outline: none;
+    color: var(--text-color);
+    flex: 1;
+    height: 100%;
+    padding-left: 1rem;
+    background-color: var(--fallback-color);
+  }
+
+  .searchIcon {
+    cursor: pointer;
+    height: calc(var(--h) * 2);
+    padding: 0 .5rem;
+    @extend .flexCenter;
+    transition: .1s ease;
+
+    &:hover, &.activeLink {
+      background-color: var(--user-color);
+      --icon-color: var(--fallback-color);
+    }
+
+    &:hover {
+      transform: scale(1.05) translateY(2px);
+
+      svg {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .searchBarWrapper {
+    --h: 2.5rem;
+  }
+}

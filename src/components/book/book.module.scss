@@ -1,0 +1,117 @@
+@import "../../assets/styles/extends";
+
+.bookItem {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  border-radius: var(--radius);
+  height: 410px;
+  overflow: hidden;
+  box-shadow: 0 0 32px var(--shadow-color);
+  background-color: var(--book-bg-color);
+
+  %bookPadding {
+    padding: 0 .8rem;
+  }
+
+  &:hover {
+    transform: scale(1.02) translateY(-6px);
+  }
+
+  &Thumb {
+    height: 198px;
+    object-fit: contain;
+  }
+
+  &NoThumb {
+    height: 198px;
+    width: 100%;
+  }
+
+  %limit {
+    overflow: auto;
+    @extend %bookPadding;
+    height: 40px;
+    @extend .customScroll;
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-color);
+    @extend %limit;
+  }
+
+  .authors {
+    @extend %limit;
+    font-weight: 700;
+    font-size: .9rem;
+    color: var(--user-color);
+  }
+
+  &PriceDate {
+    @extend .flexCenter;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    @extend %bookPadding;
+
+    .price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--user-color);
+    }
+
+    .publishedDate {
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1rem;
+      color: var(--muted-color);
+    }
+  }
+
+  .links {
+    flex: 1;
+    @extend .flexCenter;
+
+    %Common {
+      @extend .flexCenter;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .buy, .moreInfo {
+      flex: 1;
+      height: 100%;
+      background-color: var(--user-color);
+      color: white;
+      position: relative;
+      @extend %Common;
+
+
+      &:after {
+        @extend .absolute;
+        content: attr(data-text);
+        background-color: white;
+        color: var(--user-color);
+        box-shadow: 0 0 8px var(--user-color);
+        transform: translateY(100px);
+        @extend %Common;
+      }
+
+      &:hover {
+
+        &:after {
+          transform: translateY(0);
+        }
+      }
+    }
+
+    .moreInfo {
+      background-color: var(--user-color-soft);
+      color: var(--text-color);
+    }
+  }
+}

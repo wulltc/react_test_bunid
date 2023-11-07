@@ -1,0 +1,34 @@
+.fixed {
+  position: fixed;
+  inset: 0;
+}
+
+.absolute {
+  position: absolute;
+  inset: 0;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.customScroll {
+  scrollbar-width: thin;
+  -ms-overflow-style: none;
+  scrollbar-color: var(--primary-color) transparent;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--user-color);
+    border-radius: var(--radius);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}

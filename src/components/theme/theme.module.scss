@@ -1,0 +1,26 @@
+@import "../../assets/styles/extends";
+
+.wrapper {
+  @extend .absolute;
+  top: .5rem;
+  bottom: unset;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+
+  .themeIcon {
+    height: 40px;
+    right: 1rem;
+    cursor: pointer;
+    transition: .3s ease;
+
+    &:hover {
+      transform: scale(1.2) rotateZ(-12deg);
+    }
+  }
+
+  .picker {
+    width: 0;
+    opacity: 0;
+  }
+}
